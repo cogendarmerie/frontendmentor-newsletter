@@ -1,0 +1,50 @@
+$color-tomato: hsl(4, 100%, 67%)
+$color-dark-slate-grey: hsl(234, 29%, 20%)
+$color-charcoal-grey: hsl(235, 18%, 26%)
+$color-grey: hsl(231, 7%, 60%)
+$color-white: hsl(0, 0%, 100%)
+
+$font-size: 16px
+$font-default: "Roboto", sans-serif
+
+@font-face
+    font-family: "Roboto"
+    src: url("/assets/fonts/Roboto-Regular.ttf")
+    font-weight: 400
+
+@font-face
+    font-family: "Roboto"
+    src: url("/assets/fonts/Roboto-Bold.ttf")
+    font-weight: 700
+
+body
+    margin: 0
+    font-family: $font-default
+    background-color: $color-dark-slate-grey
+    $font-size: $font-size
+    color: $color-dark-slate-grey
+
+h1 
+    font-weight: 700
+    font-size: 48px
+
+section
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    height: 100vh
+
+    & > div
+        background-color: white
+        border-radius: 32px
+        padding: 24px
+        display: flex
+        flex-direction: row
+
+        & > div:first-child
+            padding-left: 24px
+            padding-right: 24px
+
+/*begin::form*/
+/*end::form*/
