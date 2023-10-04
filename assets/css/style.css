@@ -11,7 +11,7 @@
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
-  background-color: hsl(234, 29%, 20%);
+  background-color: hsl(235, 18%, 26%);
   color: hsl(234, 29%, 20%);
 }
 
@@ -39,5 +39,36 @@ section > div > div:first-child {
   padding-right: 24px;
 }
 
+/*begin::list*/
+ul {
+  list-style-image: url("../images/icon-list.svg");
+}
+ul li {
+  padding-left: 12px;
+}
+
+/*end::list*/
 /*begin::form*/
+.form-label, .form-control, button {
+  display: block;
+  width: 100%;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+button {
+  background-color: hsl(234, 29%, 20%);
+  color: hsl(0, 0%, 100%);
+  padding: 16px 32px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 9px;
+  cursor: pointer;
+  border: none;
+}
+
 /*end::form*//*# sourceMappingURL=style.css.map */

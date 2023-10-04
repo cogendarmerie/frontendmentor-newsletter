@@ -20,7 +20,7 @@ $font-default: "Roboto", sans-serif
 body
     margin: 0
     font-family: $font-default
-    background-color: $color-dark-slate-grey
+    background-color: $color-charcoal-grey
     $font-size: $font-size
     color: $color-dark-slate-grey
 
@@ -46,5 +46,31 @@ section
             padding-left: 24px
             padding-right: 24px
 
+
+/*begin::list*/
+ul
+    list-style-image: url('../images/icon-list.svg')
+    li
+        padding-left: 12px
+/*end::list*/
+
 /*begin::form*/
+.form-label, .form-control, button
+    display: block
+    width: 100%
+
+.form-label
+    font-size: calc($font-size - 2px)
+    font-weight: 700
+
+button
+    background-color: $color-dark-slate-grey
+    color: $color-white
+    padding: 16px 32px
+    font-family: $font-default
+    font-size: calc($font-size - 2px)
+    font-weight: 700
+    border-radius: 9px
+    cursor: pointer
+    border: none
 /*end::form*/
