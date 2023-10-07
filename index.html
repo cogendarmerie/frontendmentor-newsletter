@@ -17,15 +17,17 @@
 </head>
 <body>
 
-  <section>
+  <section id="form" class="visible">
     <div>
       <!--content-->
       <div>
         <div>
           <h1>Stay updated!</h1>
         </div>
-        <div>
+        <div>          
           <p>Join 60,000+ product managers receiving monthly updates on:</p>
+        </div>
+        <div>
           <ul>
             <li>Product discovery and building what matters</li>
             <li>Measuring to ensure updates are a success</li>
@@ -35,7 +37,10 @@
         <div>
           <form action="">
             <div>
-              <label for="email" class="form-label">Email adress</label>
+              <div class="form-error-container">
+                <label for="email" class="form-label">Email adress</label>
+                <p class="form-label-error">Valid email required</p>
+              </div>
               <input type="text" id="email" name="email" class="form-control" placeholder="email@company.com">
             </div>
             <div>
@@ -46,10 +51,30 @@
       </div>
       <!--picture-->
       <div>
-          <img src="./assets/images/illustration-sign-up-desktop.svg" alt="Illustration version desktop">
+          <img src="./assets/images/illustration-sign-up-desktop.svg" alt="Illustration version desktop" class="desktop">
+          <img src="./assets/images/illustration-sign-up-mobile.svg" alt="Illustration version mobile" class="mobile">
       </div>
     </div>
   </section>
-
+  <section id="confirmation">
+    <div>
+      <div>
+        <div>
+          <img src="./assets/images/icon-success.svg" alt="Icon success">
+        </div>
+        <div>
+          <h1>Thanks for subscribing!</h1>
+        </div>
+        <div>
+          <p>A confirmation email has been sent to <b>ash@loremcompany.com</b>. Please open it and click the button inside to confirm your subscription.</p>
+        </div>
+      </div>
+      <div>
+        <button>Dismiss message</button>
+      </div>
+    </div>
+  </section>
+  <script src="/node_modules/animejs/lib/anime.min.js"></script>
+  <script src="./assets/js/script.js"></script>
 </body>
 </html>

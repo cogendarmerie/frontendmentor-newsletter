@@ -1,14 +1,14 @@
-@font-face {
-  font-family: "Roboto";
-  src: url("/assets/fonts/Roboto-Regular.ttf");
-  font-weight: 400;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+.mobile {
+  display: none;
 }
-@font-face {
-  font-family: "Roboto";
-  src: url("/assets/fonts/Roboto-Bold.ttf");
-  font-weight: 700;
+
+.desktop {
+  display: block;
 }
+
 body {
+  position: relative;
   margin: 0;
   font-family: "Roboto", sans-serif;
   background-color: hsl(235, 18%, 26%);
@@ -17,58 +17,218 @@ body {
 
 h1 {
   font-weight: 700;
-  font-size: 48px;
+  font-size: 58px;
+  margin: 0;
 }
 
-section {
+section#form {
+  position: absolute;
+  inset: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
-section > div {
+section#form:not(.visible) {
+  display: none;
+}
+section#form.visible {
+  display: flex;
+}
+section#form > div {
   background-color: white;
-  border-radius: 32px;
+  border-radius: 30px;
   padding: 24px;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  width: 880px;
+  height: 593px;
 }
-section > div > div:first-child {
-  padding-left: 24px;
-  padding-right: 24px;
+section#form > div > div:first-child {
+  padding: 80px 37px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 379px;
+  height: 434px;
+  margin-right: 26px;
+}
+section#form > div > div:last-child {
+  height: 594px;
+}
+section#form > div > div:last-child > img {
+  width: 400px;
+  height: 594px;
 }
 
+/*begin::Confirmation*/
+section#confirmation {
+  position: absolute;
+  inset: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+section#confirmation:not(.visible) {
+  display: none;
+}
+section#confirmation.visible {
+  display: flex;
+}
+section#confirmation > div {
+  background-color: white;
+  border-radius: 30px;
+  padding: 47px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 378px;
+  height: 422px;
+}
+section#confirmation > div > div:first-child {
+  height: 100%;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/*end::Confirmation*/
 /*begin::list*/
 ul {
   list-style-image: url("../images/icon-list.svg");
+  padding-left: 26px;
 }
-ul li {
+ul > li {
   padding-left: 12px;
+}
+ul > li:not(:last-child) {
+  margin-bottom: 10px;
 }
 
 /*end::list*/
 /*begin::form*/
-.form-label, .form-control, button {
+.form-label, .form-label-error, .form-control, button {
   display: block;
-  width: 100%;
 }
 
-.form-label {
+.form-label, .form-label-error {
   font-size: 14px;
   font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.form-control {
+  padding: 18px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 9px;
+  width: calc(100% - 36px);
+  border: 2px solid hsl(231, 7%, 60%);
+  margin-bottom: 25px;
+  font-family: "Roboto", sans-serif;
+  outline: none;
+}
+.form-control:focus {
+  border-color: hsl(234, 29%, 20%);
+}
+.form-control.form-error {
+  border-color: rgba(255, 98, 87, 0.5);
+  background-color: rgba(255, 98, 87, 0.1);
+  color: hsl(4, 100%, 67%);
+}
+
+.form-error-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-label-error {
+  margin: 0;
+  margin-bottom: 12px;
+  color: hsl(4, 100%, 67%);
+}
+
+.form-label-error:not(.visible) {
+  opacity: 0;
 }
 
 button {
-  background-color: hsl(234, 29%, 20%);
+  background: hsl(234, 29%, 20%);
   color: hsl(0, 0%, 100%);
-  padding: 16px 32px;
+  padding: 18px 32px;
   font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-weight: 700;
   border-radius: 9px;
   cursor: pointer;
   border: none;
+  width: 100%;
+  transition: all 0.25s ease;
+}
+button:hover {
+  background: linear-gradient(to right, hsl(345.8, 100%, 66.1%), hsl(4, 100%, 67%));
 }
 
-/*end::form*//*# sourceMappingURL=style.css.map */
+/*end::form*/
+@media screen and (max-width: 375px) {
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+  h1 {
+    font-size: 42px;
+  }
+  body {
+    display: block;
+  }
+  section#form > div {
+    border-radius: 0;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column-reverse;
+    justify-content: start;
+    padding: 0;
+  }
+  section#form > div > div:first-child {
+    padding: 41px 24px;
+    width: calc(100% - 48px);
+  }
+  section#form > div > div:first-child form {
+    margin-top: 28px;
+  }
+  section#form > div > div:last-child {
+    height: auto;
+  }
+  section#form > div > div:last-child img {
+    width: 100%;
+    height: 284px;
+  }
+  section#confirmation > div {
+    border-radius: 0;
+    width: calc(100vw - 48px);
+    height: calc(100vh - 40px + 150px);
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 24px;
+    padding-top: 150px;
+  }
+  section#confirmation > div > div:first-child {
+    padding: 0;
+    justify-content: start;
+  }
+  section#confirmation > div > div:first-child > div:first-child {
+    margin-bottom: 40px;
+  }
+  section#confirmation > div > div:first-child > div:nth-child(2) {
+    margin-bottom: 20px;
+  }
+}/*# sourceMappingURL=style.css.map */
